@@ -1,0 +1,108 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="http://snipplicious.com/css/bootstrap-3.1.1.min.css">
+
+<link rel="stylesheet" type="text/css" href="http://snipplicious.com/css/font-awesome-4.0.3.min.css">
+<style>
+.stylish-panel {
+    padding: 20px 0;
+    text-align: center;
+}
+.stylish-panel > div > div{
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.stylish-panel > div:hover > div{
+    margin-top: -10px;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+    background: rgba(200, 200, 200, 0.1);
+    transition: 0.5s;
+}
+
+.stylish-panel > div:hover img {
+    border-radius: 50%;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+</style>
+<script src="http://snipplicious.com/js/jquery.js"></script>
+<script src="http://snipplicious.com/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+    <h1 class="text-center">Operación Púnica</h1>
+  </div>
+  <p class="lead text-center">Análisis de los 50 tomos publicados sobre la Operación Púnica mediante modelos basados en tópicos y representación vectorial de las palabras.</p>
+  <div class="container">
+    <div class="row stylish-panel">
+      <div class="col-md-4">
+        <div>
+          <img src="figures/empresas.png" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <h2>Empresas</h2>
+          <p>Conexiones entre empresas.
+          </p>
+          <a href="empresas/index.html" class="btn btn-primary" title="See more">Ver</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <img src="figures/personas.png" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <h2>Personas</h2>
+          <p>Conexiones entre personas.
+          </p>
+          <a href="personas/index.html" class="btn btn-primary" title="See more">Ver</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <img src="figures/lugares.png" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <h2>Lugares</h2>
+          <p>Conexiones entre lugares.
+          </p>
+          <a href="lugares/index.html" class="btn btn-primary" title="See more">Ver</a>
+        </div>
+      </div>
+    </div>
+    <div class="row stylish-panel">
+      <div class="col-md-4">
+        <div>
+          <img src="figures/topics.png" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <h2>Tópicos</h2>
+          <p>¿Qué temas se tratan? ¿Cómo se distribuyen entre los tomos?.
+          </p>
+          <a href="topicos/index.html" class="btn btn-primary" title="See more">Ver</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <img src="http://lorempixel.com/200/200/abstract/5/" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <h2>Relaciones</h2>
+          <p>Encuentra términos relacionados utilizando el modelo vectorial Word2Vec.
+          </p>
+          <a href="relaciones/index.html" class="btn btn-primary" title="See more">Ver</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <img src="http://lorempixel.com/200/200/abstract/6/" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <h2>Comparaciones</h2>
+          <p>Según el sumario ¿Cuánto se parecen Francisco Granados y David Marjaliza? ¿Y Valdemoro y Parla?
+          </p>
+          <a href="#" class="btn btn-primary" title="See more">Ver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /container -->
+</body>
+</html>
