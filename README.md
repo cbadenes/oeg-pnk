@@ -1,20 +1,5 @@
-#OEG Stemming Micro-Service
+#OEG Pnk
 [![Build Status](https://travis-ci.org/cbadenes/oeg-stemming.svg)](https://travis-ci.org/cbadenes/oeg-stemming) 
-
-## Overview
-Proof of concept creating micro-services in a structured way. It is a web service that allows reducing words to their word stem.  
- 
-
-## Project Structure
-
-The project is defined as a *[multi-module Maven project](http://books.sonatype.com/mvnex-book/reference/multimodule.html)* including the following modules:  
-- **/lib**: algorithm implementation.  
-    *It allows* ***to include*** *the algorithm as a library dependency in other projects*.
-- **/web**: web-service wrapper.  
-    *It allows* ***to use*** *the algorithm as internal service (WAR archive)*.
-- **/app**: docker template.  
-    *It allows* ***to publish*** *the algorithm as external service*.
-
 
 ## Get started!
 
@@ -47,7 +32,6 @@ The project is defined as a *[multi-module Maven project](http://books.sonatype.
     ```  
 2. Build the docker image  
     ```
-    cd app/  
     ./docker.build
     ```  
 3. Run it  
@@ -58,12 +42,12 @@ The project is defined as a *[multi-module Maven project](http://books.sonatype.
 ### To run from DockerHub
 1. Download the image  
     ```
-    docker pull cbadenes/stemming
+    docker pull cbadenes/pnk
     ```  
 2. Run it  
     ```
-    docker run -it --rm -p 8080:8080 cbadenes/stemming
+    docker run -it --rm -e JAVA_OPTS='-Xmx1g' -p 8080:8080 cbadenes/pnk
     ```  
     
 ## ... and now Test it!
-Check [http://microservices.oeg:8080/stemming](http://microservices.oeg:8080/stemming)
+Check [http://microservices.oeg:8080/pnk](http://microservices.oeg:8080/pnk)

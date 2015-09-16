@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -it --rm -e JAVA_OPTS='-Xmx1g' -p 8080:8080 cbadenes/pnk

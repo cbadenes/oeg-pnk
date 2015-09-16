@@ -1,15 +1,17 @@
 package es.upm.oeg.stemming.web.domain;
 
-
 import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * Created by cbadenes on 14/09/15.
+ */
 @Data
-public class Synonym implements Serializable{
+public class Request implements Serializable{
 
     private String word;
 
-    private Double rate;
+    private Integer num;
 
 }

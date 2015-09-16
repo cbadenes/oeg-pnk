@@ -72,7 +72,6 @@
 	</properties>
 	<modules>
 		<module>web</module>
-		<module>app</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

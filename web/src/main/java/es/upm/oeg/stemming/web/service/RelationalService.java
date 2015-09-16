@@ -1,14 +1,14 @@
 package es.upm.oeg.stemming.web.service;
 
-import es.upm.oeg.pnk.Query;
+import es.upm.oeg.stemming.web.domain.Request;
 import es.upm.oeg.stemming.web.domain.Synonym;
+import lombok.Setter;
 import org.apache.spark.mllib.feature.Word2VecModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import scala.Tuple2;
-import scala.collection.JavaConversions;
-import scala.collection.JavaConverters;
 
-
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,21 +16,44 @@ import java.util.List;
 public class RelationalService {
 
 
+    @Setter
+    @Autowired
+    SparkService sparkService;
 
+    private Word2VecModel optModel;
+
+    private Word2VecModel entModel;
 
     public RelationalService(){
 
     }
 
-    public List<Synonym> findSynonyms(String word, String num){
+    @PostConstruct
+    public void init() {
 
-        Word2VecModel model = Query.w2vModelOpt();
+//        this.optModel = Word2VecModel.load(sparkService.getSc().sc(), "model/w2v/optimized");
 
-        Tuple2<String, Object>[] result = model.findSynonyms(word, Integer.valueOf(num));
+        this.entModel = Word2VecModel.load(sparkService.getSc().sc(), "model/w2v/entities");
+    }
 
-        System.out.println(result);
 
-        return null;
+    public List<Synonym> findSynonyms(Request request){
+
+        Tuple2<String, Object>[] result = entModel.findSynonyms(request.getWord(), request.getNum());
+
+        List<Synonym> synonyms = new ArrayList<>();
+
+        if (result != null){
+            for (int i=0;i < result.length; i++){
+                Tuple2<String, Object> tuple = result[i];
+                Synonym synonym = new Synonym();
+                synonym.setWord(tuple._1());
+                synonym.setRate((Double) tuple._2());
+                synonyms.add(synonym);
+            }
+        }
+
+        return synonyms;
 
     }
 

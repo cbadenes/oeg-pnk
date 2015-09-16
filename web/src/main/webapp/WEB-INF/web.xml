@@ -20,7 +20,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <display-name>Stemming</display-name>
+    <display-name>Pnk</display-name>
 
     <!-- prepare Spring Annotation Configuration-->
     <context-param>
@@ -70,11 +70,11 @@
         </init-param>
         <init-param>
             <param-name>api.title</param-name>
-            <param-value>Stemming Services</param-value>
+            <param-value>Relational Services</param-value>
         </init-param>
         <init-param>
             <param-name>api.description</param-name>
-            <param-value>Camel Rest Service with Swagger that provides a Stemming REST service</param-value>
+            <param-value>Search relations between companies, people, places or anything else from our Word2Vec model</param-value>
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
