@@ -1,5 +1,5 @@
 #OEG Pnk
-[![Build Status](https://travis-ci.org/cbadenes/oeg-stemming.svg)](https://travis-ci.org/cbadenes/oeg-stemming) 
+[![Build Status](https://travis-ci.org/cbadenes/oeg-pnk.svg)](https://travis-ci.org/cbadenes/oeg-pnk) 
 
 ## Get started!
 
@@ -36,7 +36,7 @@
     ```  
 3. Run it  
     ```
-    ./docker.vrun
+    ./docker.run
     ```  
 
 ### To run from DockerHub
